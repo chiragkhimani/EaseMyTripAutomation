@@ -81,7 +81,7 @@
                                 <!-- supports wildcard or name pattern -->
                                 <param>**/cucumber.json</param>
                             </jsonFiles>
-                         </configuration>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

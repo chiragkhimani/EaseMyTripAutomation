@@ -1,5 +1,6 @@
 Feature: Validate Flight Listing Functionality
 
+  @smoke
   Scenario: Verify Filter Functionality
     Given user open application
     Then verify user is on homepage
@@ -10,6 +11,7 @@ Feature: Validate Flight Listing Functionality
     When user select filter option "flight.filter.option"
     Then verify only "flight.filter.option" flights are displayed on the page
 
+  @regression
   Scenario: Verify Round Trip tab activated after selecting return date
     Given user open application
     Then verify user is on homepage

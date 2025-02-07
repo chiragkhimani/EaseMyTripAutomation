@@ -1,10 +1,11 @@
-package com.automation.pages;
+package com.automation.pages.web;
 
+import com.automation.pages.common.BasePage;
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends BasePage {
+public class WebHomePage extends BasePage {
 
     @FindBy(xpath = "//a/span[text()='Flights']")
     WebElement flightTab;

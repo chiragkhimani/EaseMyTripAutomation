@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.FlightSearchPage;
+import com.automation.pages.web.WebFlightSearchPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,7 +8,7 @@ import org.junit.Assert;
 
 public class FlightSearchSteps {
 
-    FlightSearchPage flightSearchPage = new FlightSearchPage();
+    WebFlightSearchPage flightSearchPage = new WebFlightSearchPage();
 
     @Then("verify flight search page is displayed")
     public void verifyFlightSearchPageIsDisplayed() {

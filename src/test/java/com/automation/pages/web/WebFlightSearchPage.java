@@ -1,18 +1,11 @@
-package com.automation.pages;
+package com.automation.pages.web;
 
+import com.automation.pages.common.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
-public class FlightSearchPage extends BasePage {
+public class WebFlightSearchPage extends BasePage {
 
     @FindBy(id = "FromSector_show")
     WebElement fromCityElement;

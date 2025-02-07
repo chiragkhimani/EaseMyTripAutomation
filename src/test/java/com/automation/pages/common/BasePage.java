@@ -1,4 +1,4 @@
-package com.automation.pages;
+package com.automation.pages.common;
 
 import com.automation.utils.DriverManager;
 import org.openqa.selenium.WebDriver;

@@ -1,6 +1,8 @@
 package com.automation.steps;
 
-import com.automation.pages.HomePage;
+import com.automation.pages.android.AndroidHomePage;
+import com.automation.pages.web.WebHomePage;
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,7 +10,7 @@ import org.junit.Assert;
 
 public class HomeSteps {
 
-    HomePage homePage = new HomePage();
+    WebHomePage homePage = new WebHomePage();
 
     @Given("user open application")
     public void userOpenApplication() {
