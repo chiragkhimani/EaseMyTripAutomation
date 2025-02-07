@@ -10,7 +10,9 @@ public class ConfigReader {
     public static void initReader() {
         props = new Properties();
         try {
+            String env = System.getProperty("env", "dev");
             props.load(new FileInputStream("src/test/resources/config/config.properties"));
+            props.load(new FileInputStream("src/test/resources/config/" + env + "_config.properties"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

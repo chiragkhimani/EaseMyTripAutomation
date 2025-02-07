@@ -23,4 +23,14 @@ public class FlightSearchSteps {
         flightSearchPage.clickOnFlightSearchBtn();
     }
 
+    @When("user select return date {string}")
+    public void userSelectReturnDate(String date) {
+        flightSearchPage.clickOnReturnDateElement();
+        flightSearchPage.enterDate(ConfigReader.getConfigValue(date));
+    }
+
+    @Then("verify round trip tab is activated")
+    public void verifyRoundTripTabIsActivated() {
+        Assert.assertTrue(flightSearchPage.isRoundTripTabActivated());
+    }
 }

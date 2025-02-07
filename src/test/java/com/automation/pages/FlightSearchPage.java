@@ -35,6 +35,12 @@ public class FlightSearchPage extends BasePage {
     @FindBy(id = "img2Nex")
     WebElement nextBtn;
 
+    @FindBy(id = "divRtnCal")
+    WebElement returnDateElement;
+
+    @FindBy(id="rtrip")
+    WebElement roundTripTab;
+
     String XPATH_DATE_VALUE = "//div[@class='box']//div[@class='days']//li[text()='%s']";
     String ID_CITY_SEARCH_RESULT = "spn%s";
 
@@ -78,5 +84,13 @@ public class FlightSearchPage extends BasePage {
 
     public void clickOnFlightSearchBtn() {
         searchBtn.click();
+    }
+
+    public void clickOnReturnDateElement() {
+        returnDateElement.click();
+    }
+
+    public boolean isRoundTripTabActivated() {
+        return roundTripTab.getAttribute("class").contains("active");
     }
 }

@@ -12,10 +12,10 @@ public class DriverManager {
     static WebDriver driver;
 
     public static void createDriver() {
-        if (ConfigReader.getConfigValue("platform").equals("web")) {
+        if (System.getProperty("platform").equals("web")) {
             driver = new ChromeDriver();
             driver.manage().window().maximize();
-        } else if (ConfigReader.getConfigValue("platform").equals("mobile")) {
+        } else if (System.getProperty("platform").equals("mobile")) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("platformName", ConfigReader.getConfigValue("platform.name"));
             capabilities.setCapability("automationName", ConfigReader.getConfigValue("automation.name"));
@@ -24,6 +24,8 @@ public class DriverManager {
             capabilities.setCapability("appPackage", ConfigReader.getConfigValue("app.package"));
             capabilities.setCapability("appActivity", ConfigReader.getConfigValue("app.activity"));
             driver = new AndroidDriver(capabilities);
+        } else {
+            throw new RuntimeException("'platform' parameter value can be web or mobile");
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     }

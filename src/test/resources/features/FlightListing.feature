@@ -10,3 +10,10 @@ Feature: Validate Flight Listing Functionality
     When user select filter option "flight.filter.option"
     Then verify only "flight.filter.option" flights are displayed on the page
 
+  Scenario: Verify Round Trip tab activated after selecting return date
+    Given user open application
+    Then verify user is on homepage
+    When user click on Flight Tab
+    Then verify flight search page is displayed
+    When user select return date "flight.return.date"
+    Then verify round trip tab is activated
