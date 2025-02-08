@@ -1,5 +1,8 @@
 package com.automation.steps;
 
+
+import com.automation.pages.android.AndroidFlightListingPage;
+import com.automation.pages.interfaces.FlightListingPage;
 import com.automation.pages.web.WebFlightListingPage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.Then;
@@ -8,7 +11,15 @@ import org.junit.Assert;
 
 public class FlightListingSteps {
 
-    WebFlightListingPage flightListingPage = new WebFlightListingPage();
+    FlightListingPage flightListingPage;
+
+    public FlightListingSteps() {
+        if (System.getProperty("platform").equalsIgnoreCase("web")) {
+            flightListingPage = new WebFlightListingPage();
+        } else {
+            flightListingPage = new AndroidFlightListingPage();
+        }
+    }
 
     @Then("verify user is on flight listing page")
     public void verifyUserIsOnFlightListingPage() {

@@ -1,13 +1,14 @@
 package com.automation.pages.web;
 
 import com.automation.pages.common.BasePage;
+import com.automation.pages.interfaces.FlightListingPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class WebFlightListingPage extends BasePage {
+public class WebFlightListingPage extends BasePage implements FlightListingPage {
 
     @FindBy(xpath = "//div[@deptm and not(@style='display: none;')]//span[contains(@ng-bind,'GetAirLineName')]")
     List<WebElement> listOfFlightNames;

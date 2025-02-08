@@ -1,6 +1,11 @@
 package com.automation.steps;
 
+import com.automation.pages.android.AndroidFlightSearchPage;
+import com.automation.pages.android.AndroidHomePage;
+import com.automation.pages.interfaces.FlightListingPage;
+import com.automation.pages.interfaces.FlightSearchPage;
 import com.automation.pages.web.WebFlightSearchPage;
+import com.automation.pages.web.WebHomePage;
 import com.automation.utils.ConfigReader;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,7 +13,16 @@ import org.junit.Assert;
 
 public class FlightSearchSteps {
 
-    WebFlightSearchPage flightSearchPage = new WebFlightSearchPage();
+    FlightSearchPage flightSearchPage;
+
+    public FlightSearchSteps() {
+        if (System.getProperty("platform").equalsIgnoreCase("web")) {
+            flightSearchPage = new WebFlightSearchPage();
+        } else {
+            flightSearchPage = new AndroidFlightSearchPage();
+        }
+    }
+
 
     @Then("verify flight search page is displayed")
     public void verifyFlightSearchPageIsDisplayed() {

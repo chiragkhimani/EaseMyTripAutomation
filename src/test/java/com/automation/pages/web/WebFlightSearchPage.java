@@ -1,11 +1,12 @@
 package com.automation.pages.web;
 
 import com.automation.pages.common.BasePage;
+import com.automation.pages.interfaces.FlightSearchPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class WebFlightSearchPage extends BasePage {
+public class WebFlightSearchPage extends BasePage implements FlightSearchPage {
 
     @FindBy(id = "FromSector_show")
     WebElement fromCityElement;
